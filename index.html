@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simeon Nedkov - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+    .container {
+      display: flex;
+      max-width: 850px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+    .left-panel, .right-panel {
+      padding: 30px;
+    }
+    .left-panel {
+      width: 35%;
+      background: #1e1e1e;
+      color: #fff;
+      border-right: 4px solid #00bfff;
+      text-align: center;
+    }
+    .right-panel {
+      width: 65%;
+      padding: 10px 30px;
+    }
+    .profile-pic {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .left-panel h1 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .left-panel h3 {
+      font-weight: 600;
+      color: #00bfff;
+    }
+    .intro-text {
+      text-align: justify;
+      font-weight: 400;
+      margin: 20px 0;
+    }
+    .contact-block {
+      background-color: #00bfff;
+      color: #fff;
+      padding: 13px;
+      border-radius: 8px;
+      text-align: right;
+    }
+    .contact-block i {
+      margin-right: 10px;
+      color: #fff;
+    }
+    .info-block {
+      text-align: right;
+      margin-top: 30px;
+    }
+    .left-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      border-bottom: 2px solid #00bfff;
+      font-size: 21.33px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .left-title i {
+      color: #00bfff;
+      margin-right: auto;
+    }
+    .section-title {
+      font-size: 21.33px;
+      font-weight: 700;
+      margin: 20px 0;
+      text-transform: uppercase;
+      border-bottom: 2px solid #00bfff;
+    }
+    .right-panel .section-title {
+      color: #222;
+      text-align: left;
+      margin: 15px 0;
+    }
+    .right-panel h3 {
+      margin: 5px 0;
+    }
+    .subtext {
+      font-size: 16px;
+      font-weight: 600;
+      color: #444;
+    }
+    .bold-blue {
+      color: #00bfff;
+      font-weight: 600;
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding-left: 30px;
+      margin-bottom: 10px;
+    }
+    li { margin-bottom: 5px; }
+    .skills-inline {
+      background: #eee;
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 5px 5px 0 0;
+      border-radius: 5px;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+    }
+    .social-icons img.no-filter {
+      filter: none;
+    }
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .left-panel, .right-panel {
+        width: 100%;
+        text-align: center;
+      }
+      .info-block, .section-title {
+        text-align: center;
+      }
+      .contact-block {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <aside class="left-panel">
+      <img src="simonen.jpg" alt="Simeon Nedkov" class="profile-pic">
+      <div class="social-icons">
+        <a href="https://github.com/simonen" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
+        <a href="https://www.behance.net/aliwalil/projects" target="_blank"><img class="no-filter" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/behance/behance-original.svg" alt="Behance"></a>
+      </div>
+      <h1>SIMEON NEDKOV</h1>
+      <h3>SYSTEM ADMINISTRATOR CANDIDATE</h3>
+      <p class="intro-text">System Administrator with 1+ years of experience in infrastructure monitoring, server management, and virtualization seeking to deepen cloud and DevOps expertise.</p>
+
+      <section class="contact-block">
+        <p><i class="fas fa-map-marker-alt"></i> SOFIA, BULGARIA</p>
+        <p><i class="fas fa-phone"></i> +359 0883 398 679</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:si.nedkov@gmail.com" style="color:#fff; text-decoration:none;">si.nedkov@gmail.com</a></p>
+      </section>
+
+      <section class="info-block">
+        <div class="left-title"><i class="fas fa-graduation-cap"></i><span>Education</span></div>
+        <p class="bold-blue">ARCHITECTURE</p>
+        <p class="subtext">06/2017 UACEG, SOFIA</p>
+        <p class="bold-blue">MIDDLE SCHOOL</p>
+        <p class="subtext">SLS GEO MILEV, DOBRICH</p>
+      </section>
+
+      <section class="info-block">
+        <div class="left-title"><i class="fas fa-comments"></i><span>Languages</span></div>
+        <p>ENGLISH: <span class="bold-blue">FLUENT</span></p>
+        <p>FRENCH: <span class="bold-blue">BASIC</span></p>
+        <p>BULGARIAN: <span class="bold-blue">NATIVE</span></p>
+      </section>
+
+      <section class="info-block">
+        <div class="left-title"><i class="fas fa-users"></i><span>Soft Skills</span></div>
+        <p>ADAPTIVITY</p>
+        <p>MOTIVATED LEARNER</p>
+        <p>ATTENTION TO DETAIL</p>
+      </section>
+
+      <section class="info-block">
+        <div class="left-title"><i class="fas fa-dumbbell"></i><span>Leisure</span></div>
+        <p>HITTING THE GYM</p>
+        <p>ARCHVIZ</p>
+        <p>LEARNING NEW SKILLS</p>
+      </section>
+    </aside>
+
+    <section class="right-panel">
+      <h2 class="section-title">Work Experience</h2>
+      <h3>Junior System Administrator</h3>
+      <p class="subtext">Atscale, Inc (01/2022 – 06/2023)</p>
+      <ul>
+        <li>Windows Server/Desktop Administration</li>
+        <li>Linux Administration</li>
+        <li>QA / BI Teams Support</li>
+        <li>Infrastructure Monitoring</li>
+        <li>Virtual Machine Deployment</li>
+        <li>Hypervisor Administration</li>
+        <li>BI Software Deployment</li>
+        <li>Active Directory Administration</li>
+        <li>Inventory Maintenance</li>
+        <li>Hardware Maintenance</li>
+        <li>Documentation</li>
+      </ul>
+      <h3>Architect</h3>
+      <p class="subtext">ISPPD (06/2017 – 12/2021)</p>
+      <h3>Archviz Artist</h3>
+      <p class="subtext">Red Vertex (06/2014 – 11/2015)</p>
+
+      <h2 class="section-title">Tech Skills</h2>
+      <div>
+        <p class="bold-blue">OS/Infrastructure</p>
+        <p class="skills-inline">Windows Server</p>
+        <p class="skills-inline">Proxmox PVE/PBS</p>
+        <p class="skills-inline">Linux</p>
+        <p class="skills-inline">TrueNAS Scale</p>
+        <p class="skills-inline">Azure</p>
+      </div>
+      <div>
+        <p class="bold-blue">Monitoring/Inventory</p>
+        <p class="skills-inline">CheckMK</p>
+        <p class="skills-inline">phpIPAM</p>
+        <p class="skills-inline">SnipeIT</p>
+      </div>
+      <div>
+        <p class="bold-blue">Network Services</p>
+        <p class="skills-inline">OpenLDAP</p>
+        <p class="skills-inline">OpenVPN</p>
+        <p class="skills-inline">BIND</p>
+        <p class="skills-inline">Postfix</p>
+        <p class="skills-inline">Dovecot</p>
+        <p class="skills-inline">OpenSSL</p>
+        <p class="skills-inline">Very Basic Apache Web Server</p>
+      </div>
+
+      <h2 class="section-title">Courses & Certifications</h2>
+      <p><strong>2023 SOFTUNI</strong></p>
+      <ul>
+        <li><a href="https://shorturl.at/iZCRy" target="_blank">Python Object-Oriented Programming</a></li>
+        <li><a href="https://shorturl.at/LqQlM" target="_blank">Python Advanced</a></li>
+        <li><a href="https://shorturl.at/XtyE9" target="_blank">Azure Essentials</a></li>
+      </ul>
+      <p><strong>2022 SOFTUNI</strong></p>
+      <ul>
+        <li><a href="https://shorturl.at/cVGJQ" target="_blank">Python Fundamentals</a></li>
+        <li><a href="https://shorturl.at/OWMjl" target="_blank">Computer Networking Advanced</a></li>
+        <li><a href="https://shorturl.at/Utc7H" target="_blank">Computer Networking Fundamentals</a></li>
+      </ul>
+      <p><strong>2021 SOFTUNI</strong></p>
+      <ul>
+        <li><a href="https://shorturl.at/nycnY" target="_blank">Windows Administration Advanced</a></li>
+        <li><a href="https://shorturl.at/3qAej" target="_blank">Windows Administration Fundamentals</a></li>
+        <li><a href="https://shorturl.at/yjFmQ" target="_blank">Linux Administration Advanced</a></li>
+        <li><a href="https://shorturl.at/QnOdN" target="_blank">Linux Administration Fundamentals</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
