@@ -16,7 +16,7 @@
     }
     .container {
       display: flex;
-      max-width: 850px;
+      max-width: 800px;
       margin: auto;
       background: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,7 +26,7 @@
       padding: 30px;
     }
     .left-panel {
-      width: 35%;
+      width: 40%;
       background: repeating-linear-gradient(
         -45deg,
         #333 0,
@@ -39,7 +39,7 @@
       text-align: center;
     }
     .right-panel {
-      width: 65%;
+      width: 60%;
       padding: 10px 30px;
     }
     .profile-pic {
@@ -48,7 +48,7 @@
       margin-bottom: 10px;
     }
     .left-panel h1 {
-      font-size: 24px;
+      font-size: 27px;
       font-weight: 600;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -65,53 +65,80 @@
     .contact-block {
       background-color: #00bfff;
       color: #fff;
-      padding: 13px;
+      padding: 20px;
       border-radius: 8px;
       text-align: right;
     }
     .contact-block i {
       margin-right: 10px;
       color: #fff;
+      line-height: 20px;
     }
     .info-block {
       text-align: right;
       margin-top: 30px;
+      line-height: 1.2;
     }
     .left-title {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 10px;
-      border-bottom: 2px solid #00bfff;
+      border-bottom: 3px dotted #00bfff;
       font-size: 21.33px;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+
       text-transform: uppercase;
     }
     .left-title i {
       color: #00bfff;
       margin-right: auto;
     }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #00bfff;
+      margin-bottom: 20px;
+      padding: 0;
+    }
     .section-title {
+      flex-grow: 1;        /* Make the title grow to take up the full space */
+      margin: 0;
+      padding: 0;
       font-size: 21.33px;
       font-weight: 700;
-      margin: 20px 0;
       text-transform: uppercase;
-      border-bottom: 2px solid #00bfff;
+      color: #222;
+    }
+    .section-icon {
+      color: #00bfff;
+      font-size: 20px;
+      margin-left: 10px;   /* Optional space between text and icon */
     }
     .right-panel .section-title {
       color: #222;
       text-align: left;
-      margin: 15px 0;
+      margin: 10px 0;
     }
     .right-panel h3 {
-      margin: 5px 0;
+      margin: 0px 0;
     }
-    .subtext {
+    .right-panel a {
+      text-decoration: none;
+    }
+    .left-subtext {
       font-size: 16px;
       font-weight: 400;
-      color: #fff;
+      color: #fff; /* Left panel text remains white */
+    }
+    .right-subtext {
+      font-size: 16px;
+      font-weight: 1600;
+      color: #00bfff; /* Lighter blue or off-white text */
     }
     .bold-blue {
       color: #00bfff;
@@ -127,8 +154,8 @@
     .skills-inline {
       background: #eee;
       display: inline-block;
-      padding: 5px 10px;
-      margin: 5px;
+      padding: 5px 5px;
+      margin: 3px;
       border-radius: 5px;
     }
     .social-icons {
@@ -175,16 +202,16 @@
 
       <section class="contact-block">
         <p><i class="fas fa-map-marker-alt"></i> SOFIA, BULGARIA</p>
-        <p><i class="fas fa-phone"></i><a href="tel:+3590883398679"> +359 0883 398 679</a></p>
+        <p><i class="fas fa-phone"></i><a href="tel:+3590883398679; text-decoration:none;"> +359 0883 398 679</a></p>
         <p><i class="fas fa-envelope"></i><a href="mailto:si.nedkov@gmail.com" style="color:#fff; text-decoration:none;">si.nedkov@gmail.com</a></p>
       </section>
 
       <section class="info-block">
         <div class="left-title"><i class="fas fa-graduation-cap"></i><span>Education</span></div>
         <p class="bold-blue">ARCHITECTURE</p>
-        <p class="subtext">06/2017 UACEG, SOFIA</p>
+        <p class="left-subtext">06/2017 UACEG, SOFIA</p>
         <p class="bold-blue">MIDDLE SCHOOL</p>
-        <p class="subtext">SLS GEO MILEV, DOBRICH</p>
+        <p class="left-subtext">SLS GEO MILEV, DOBRICH</p>
       </section>
 
       <section class="info-block">
@@ -210,9 +237,12 @@
     </aside>
 
     <section class="right-panel">
-      <h2 class="section-title">Work Experience</h2>
+      <div class="section-header">
+        <h2 class="section-title">Work Experience</h2>
+        <i class="fas fa-briefcase section-icon"></i>
+      </div>
       <h3>Junior System Administrator</h3>
-      <p class="subtext">Atscale, Inc (01/2022 – 06/2023)</p>
+      <p class="bold-blue">Atscale, Inc (01/2022 – 06/2023)</p>
       <ul>
         <li>Windows Server/Desktop Administration</li>
         <li>Linux Administration</li>
@@ -227,11 +257,14 @@
         <li>Documentation</li>
       </ul>
       <h3>Architect</h3>
-      <p class="subtext">ISPPD (06/2017 – 12/2021)</p>
+      <p class="bold-blue">ISPPD (06/2017 – 12/2021)</p>
       <h3>Archviz Artist</h3>
-      <p class="subtext">Red Vertex (06/2014 – 11/2015)</p>
+      <p class="bold-blue">Red Vertex (06/2014 / 11/2015)</p>
 
-      <h2 class="section-title">Tech Skills</h2>
+      <div class="section-header">
+        <h2 class="section-title">Tech Skills</h2>
+        <i class="fas fa-cogs section-icon"></i>
+      </div>
       <div>
         <p class="bold-blue">OS/INFRASTRUCTURE</p>
         <p class="skills-inline">Windows Server</p>
@@ -254,10 +287,13 @@
         <p class="skills-inline">Postfix</p>
         <p class="skills-inline">Dovecot</p>
         <p class="skills-inline">OpenSSL</p>
-        <p class="skills-inline">Very Basic Apache Web Server</p>
+        <p class="skills-inline">Basic Apache Web Server</p>
       </div>
 
-      <h2 class="section-title">Courses & Certifications</h2>
+      <div class="section-header">
+        <h2 class="section-title">Courses & Certifications</h2>
+        <i class="fas fa-certificate section-icon"></i>
+      </div>
       <p><strong>2023 SOFTUNI</strong></p>
       <ul>
         <li><a href="https://shorturl.at/iZCRy" target="_blank">Python Object-Oriented Programming</a></li>
