@@ -2,7 +2,7 @@ import type { SiteConfig } from '~/types'
 
 const config: SiteConfig = {
   // Absolute URL to the root of your published site, used for generating links and sitemaps.
-  site: 'https://blog.github.io',
+  site: 'https://simonen.github.io',
   // The name of your site, used in the title and for SEO.
   title: 'SYMONYM',
   // The description of your site, used for SEO and RSS feed.
@@ -62,7 +62,6 @@ const config: SiteConfig = {
     //   'github-dark',
     // ]
     include: [
-      'andromeeda',
       'aurora-x',
       'ayu-dark',
       'catppuccin-frappe',
@@ -71,28 +70,16 @@ const config: SiteConfig = {
       'catppuccin-mocha',
       'dark-plus',
       'dracula',
-      'dracula-soft',
       'everforest-dark',
-      'everforest-light',
       'github-dark',
       'github-dark-default',
       'github-dark-dimmed',
       'github-dark-high-contrast',
       'github-light',
-      'github-light-default',
-      'github-light-high-contrast',
       'gruvbox-dark-hard',
-      'gruvbox-dark-medium',
-      'gruvbox-dark-soft',
-      'gruvbox-light-hard',
-      'gruvbox-light-medium',
-      'gruvbox-light-soft',
       'houston',
       'kanagawa-dragon',
-      'kanagawa-lotus',
       'kanagawa-wave',
-      'laserwave',
-      'light-plus',
       'material-theme',
       'material-theme-darker',
       'material-theme-lighter',
@@ -101,21 +88,14 @@ const config: SiteConfig = {
       'min-dark',
       'min-light',
       'monokai',
-      'night-owl',
       'nord',
       'one-dark-pro',
-      'one-light',
       'plastic',
       'poimandres',
       'rose-pine',
       'rose-pine-dawn',
       'rose-pine-moon',
-      'slack-dark',
       'slack-ochin',
-      'snazzy-light',
-      'solarized-dark',
-      'solarized-light',
-      'synthwave-84',
       'tokyo-night',
       'vesper',
       'vitesse-black',
@@ -175,11 +155,6 @@ const config: SiteConfig = {
   // To add your own character, add an image file to the top-level `/public` directory
   // Make sure to compress the image to a web-friendly size (<100kb)
   // Try using the excellent https://squoosh.app web app for creating small webp files
-  characters: {
-    owl: '/owl.webp',
-    unicorn: '/unicorn.webp',
-    duck: '/duck.webp',
-  },
 }
 
 export default config
