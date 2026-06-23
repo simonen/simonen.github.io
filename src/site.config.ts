@@ -2,7 +2,7 @@ import type { SiteConfig } from '~/types'
 
 const config: SiteConfig = {
   // Absolute URL to the root of your published site, used for generating links and sitemaps.
-  site: 'https://simonen.github.io',
+  site: 'https://blog.github.io',
   // The name of your site, used in the title and for SEO.
   title: 'SYMONYM',
   // The description of your site, used for SEO and RSS feed.
@@ -11,7 +11,7 @@ const config: SiteConfig = {
   // The author of the site, used in the footer, SEO, and RSS feed.
   author: 'Simeon Nedkov',
   // Keywords for SEO, used in the meta tags.
-  tags: ['Astro', 'Terminal', 'Theme', 'MultiTerm', 'stelcodes'],
+  tags: ['linux', 'administration', 'networking'],
   // Path to the image used for generating social media previews.
   // Needs to be a square JPEG file due to limitations of the social card generator.
   // Try https://squoosh.app/ to easily convert images to JPEG.
@@ -107,7 +107,6 @@ const config: SiteConfig = {
       'one-light',
       'plastic',
       'poimandres',
-      'red',
       'rose-pine',
       'rose-pine-dawn',
       'rose-pine-moon',
