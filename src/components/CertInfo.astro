@@ -1,0 +1,52 @@
+---
+import { dateString } from '~/utils'
+import type { CollectionEntry } from 'astro:content'
+import { Icon } from 'astro-icon/components'
+
+
+interface Props {
+  cert: CollectionEntry<'certs'>
+  class?: string
+}
+
+
+const { cert, class: className } = Astro.props
+const samePage = Astro.url.pathname === `/certs/${cert.id}`
+const articleLink = samePage ? `#${cert.id}` : `/certs/${cert.id}`
+
+
+---
+
+<div class:list={[className, 'text-foreground/80']}>
+  <div class="flex gap-3 items-center justify-between flex-wrap text-sm">
+    <div class="flex items-center gap-3">
+      <time class="text-sm text-foreground/60">{dateString(cert.data.published)}</time>
+      <Icon name="ph:student" class="size-7 text-accent/50" /> 
+
+      {
+        cert.data.issuer && (
+          <span class="text-xs bg-accent/10 font-medium text-accent border-1 border-accent/22 px-2 py-0.5 rounded-full">
+            {cert.data.issuer}
+          </span>
+        )
+      }
+
+      {
+        cert.data.certification && (
+          <span class="text-sm text-foreground/60">
+            {cert.data.certification}
+          </span>
+        )
+      }
+
+      {
+        cert.data.credentialId && (
+          <span class="text-sm bg-foreground/7 text-foreground/70 px-3 py-1 rounded-full">
+            ID: {cert.data.credentialId}
+          </span>
+        )
+      }
+
+    </div>
+  </div>
+</div>

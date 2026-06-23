@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getSortedSkills } from '~/utils'
+import { Icon } from 'astro-icon/components'
+
+
+interface Props {
+  category: string
+  skills?: CollectionEntry<'skills'>[]
+}
+
+const { category, skills } = Astro.props
+const allSkills = skills || await getSortedSkills()
+const categorySkills = allSkills.filter(skill => skill.data.category === category)
+---
+
+{
+  categorySkills.length > 0 && (
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-heading1 mb-4">{category}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {categorySkills.map((skill) => (
+          <div class="flex items-start gap-3 p-3 bg-accent/5 rounded-lg border border-accent/10 hover:border-accent/30 transition-colors duration-200 active-border-accent/30">
+            {
+              skill.data.icon && (
+                <span class="text-2xl flex-shrink-0">
+		  <Icon name={skill.data.icon} class="size=6" />
+                </span>
+              )
+            }
+            <div class="min-w-0 flex-1">
+              <h4 class="font-medium text-foreground">{skill.data.title}</h4>
+              {skill.data.description && (
+                <p class="text-sm text-foreground/70 mt-1">{skill.data.description}</p>
+              )}
+              {skill.data.subcategory && (
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {skill.data.subcategory.split(',').map((subcat) => (
+                    <span class="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full">
+                      {subcat.trim()}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,74 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Tags from '~/components/Tags.astro'
+import CertInfo from '~/components/CertInfo.astro'
+import type { Collation } from '~/types'
+import { CertsTagsGroup } from '~/utils'  // Changed from TagsGroup
+import IconChevronsRight from '~/icons/chevrons-right.svg'
+import { Icon } from 'astro-icon/components'
+import { dateString, CertsTagsGroup } from '~/utils'
+
+
+interface Props {
+  cert: CollectionEntry<'certs'>
+}
+
+const { cert } = Astro.props
+
+let tags: Collation<'certs'>[] | undefined
+
+if (cert.data.tags && cert.data.tags.length > 0) {
+  const tagsGroup = await CertsTagsGroup.build()  // Using CertsTagsGroup
+  tags = tagsGroup.matchMany(cert.data.tags)
+}
+
+const articleLink = cert.data.credentialUrl || `/certs/${cert.id}`
+const isExternal = !!cert.data.credentialUrl
+
+---
+<article class="w-full py-2 my-1 md:my-4">
+  <div class="p-4 bg-accent/2 hover:bg-accent/3 rounded-lg border hover:border-accent/20 border-accent/2 active:bg-accent/5 transition-all duration-150">
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <h1 class="text-xl text-heading1 font-semibold">
+        <a href={articleLink} {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+          {cert.data.title}
+        </a>
+      </h1>
+      {
+        cert.data.status && (
+          <span class={`text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0 ${
+            cert.data.status.toLowerCase().includes('progress')
+              ? 'bg-amber-500/10 text-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.3)]'
+              : cert.data.status.toLowerCase().includes('complete')
+              ? 'bg-emerald-500/10 text-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.3)]'
+              : 'bg-accent/10 text-accent'
+          }`}>
+            {cert.data.status}
+          </span>
+        )
+      }
+    </div>
+
+    <CertInfo cert={cert} class="mb-3" />
+
+    {
+      cert.data.description && (
+        <p class="pl-0.5 my-4 text-base/7 text-foreground">
+          {cert.data.description}
+        </p>
+      )
+    }
+
+    <hr class="border-accent/10 mb-4" />
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-3">
+        {tags && <Tags tags={tags} />}
+      </div>
+      <a class="button flex items-center !pl-3.5 !py-1 !text-sm flex-shrink-0 ml-auto" href={articleLink}
+        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        certificate
+        <IconChevronsRight class="size-4 ml-2" />
+      </a>
+    </div>
+</article>

@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets'
+import type { FrontmatterImage } from '~/types'
+import LetterGlitch from "~/components/LetterGlitch.tsx";
+
+interface Props {
+  avatarImage?: FrontmatterImage
+  githubCalendar?: string
+}
+const { avatarImage, githubCalendar } = Astro.props
+---
+
+<div class="my-6 md:mx-2">
+  <div
+    class="flex flex-col sm:flex-row items-center justify-around sm:gap-5 max-w-full mb-6"
+  >
+{
+  avatarImage && (
+    <div class="relative size-36 shrink-0">
+      <div
+        class="rounded-full border-8 border-accent/15 size-36 aspect-square box-content"
+        style={`
+          background-color: var(--color-accent);
+          mask-image: url(${avatarImage.src.src});
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: contain;
+
+          -webkit-mask-image: url(${avatarImage.src.src});
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          -webkit-mask-size: contain;
+        `}
+      />
+    </div>
+  )
+}
+    <div>
+      <div class:list={['m-10 max-w-full prose']}>
+        <slot />
+      </div>
+    </div>
+  </div>
+  <LetterGlitch client:load />
+
+</div>
