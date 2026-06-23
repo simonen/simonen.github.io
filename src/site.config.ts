@@ -68,14 +68,10 @@ const config: SiteConfig = {
       'github-dark',
       'github-dark-default',
       'github-dark-high-contrast',
-      'github-light',
       'gruvbox-dark-hard',
       'houston',
       'kanagawa-dragon',
       'kanagawa-wave',
-      'material-theme',
-      'material-theme-darker',
-      'material-theme-lighter',
       'material-theme-ocean',
       'material-theme-palenight',
       'min-dark',
@@ -89,8 +85,6 @@ const config: SiteConfig = {
       'slack-ochin',
       'tokyo-night',
       'vesper',
-      'vitesse-black',
-      'vitesse-dark',
     ],
     // Optional overrides for specific themes to customize colors.
     // Their values can be either a literal color (hex, rgb, hsl) or another theme key.
