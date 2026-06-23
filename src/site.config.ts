@@ -100,7 +100,6 @@ const config: SiteConfig = {
       'vesper',
       'vitesse-black',
       'vitesse-dark',
-      'vitesse-light',
     ],
     // Optional overrides for specific themes to customize colors.
     // Their values can be either a literal color (hex, rgb, hsl) or another theme key.
